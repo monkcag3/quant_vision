@@ -1,0 +1,141 @@
+
+.msg-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.msg-content {
+    position: relative;
+    width: 768px;
+    display: flex;
+    flex-direction: column;
+}
+
+.msg-bubble {
+    width: 768px;
+    display: flex;
+}
+
+.left {
+    justify-content: start;
+}
+
+.right {
+    justify-content: end;
+}
+
+.vertical-space {
+    height: 120px;
+}
+
+.msg-sender {
+    position: fixed;
+    background-color: #404045;
+    width: 768px;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    bottom: 19px;
+    padding: 14px;
+
+    box-sizing: border-box;
+    border-radius: 24px;
+    cursor: text;
+}
+
+.msg-sender-wrapper {
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // margin: 30px;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.msg-textarea-wrapper {
+    width: 100%;
+}
+
+.msg-textarea {
+    resize: none;
+    color: white;
+    caret-color: white;
+    background-color: #00000000;
+    position: relative;
+
+    font-size: inherit;
+    line-height: inherit;
+    word-break: break-word;
+    border: none;
+    outline: none;
+    white-space: pre-wrap;
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    min-height: 56px;
+    max-height: 560px;
+}
+
+.msg-btn-area {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 4px;
+    // display: flex;
+    width: 100%;
+}
+
+.msg-btn {
+    cursor: not-allowed;
+    border: none;
+    border-radius: 16px;
+    color: #4b4b4b;
+    background-color: rgb(113, 113, 122);
+    float: right;
+
+    &:not(.disabled) {
+        cursor: pointer;
+        color: #f8faff;
+        background-color: #4d6bfe;
+    }
+}
+
+
+.msg-btn-outlook {
+    justify-content: center;
+    align-items: center;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+}
+
+.msg-btn-icon {
+    line-height: 0;
+    display: inline-flex;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.msg-processing {
+    // background: currentColor;
+    background: #4d6bfe;
+    border-radius: 2px;
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    margin: 1px;
+}
