@@ -1,0 +1,3 @@
+[submodule "KLineChart"]
+	path = KLineChart
+	url = git@github.com:monkcag3/KLineChart.git
