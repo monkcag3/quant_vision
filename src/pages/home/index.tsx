@@ -37,6 +37,26 @@ export default () => {
               downBorderColor: '#2b821d',
               downWickColor: '#2b821d'
             }
+        },
+        indicator: {
+            ohlc: {
+                // 'current_open' | 'previous_close'
+                compareRule: 'current_open',
+                upColor: 'rgba(249, 40, 85, .7)',
+                downColor: 'rgba(45, 192, 142, .7)',
+                noChangeColor: '#888888'
+            },
+            bars: [{
+                // 'fill' | 'stroke' | 'stroke_fill'
+                style: 'fill',
+                // 'solid' | 'dashed'
+                borderStyle: 'solid',
+                borderSize: 1,
+                borderDashedValue: [2, 2],
+                upColor: 'rgba(249, 40, 85, .7)',
+                downColor: 'rgba(45, 192, 142, .7)',
+                noChangeColor: '#888888'
+            }],
         }
     });
 
@@ -78,5 +98,5 @@ export default () => {
     }
   }, [])
 
-  return <Box id="chart" style={{ width: 600, height: 600 }}/>
+  return <Box id="chart" sx={{ flex: 1 }}/>
 }
