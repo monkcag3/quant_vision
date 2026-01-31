@@ -29,6 +29,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import BrightnessAutoRoundedIcon from '@mui/icons-material/BrightnessAutoRounded';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import {Link, useLocation} from "react-router-dom";
 
 import ColorSchemeToggle from './color_scheme_toggle';
 import { closeSidebar } from './utils';
@@ -68,6 +69,7 @@ function Toggler({
 }
 
 export default function Sidebar() {
+  const location = useLocation();
   return (
     <Sheet
       className="Sidebar"
@@ -149,23 +151,32 @@ export default function Sidebar() {
           }}
         >
           <ListItem>
-            <ListItemButton>
+            <ListItemButton
+              component = {Link}
+              to = "/"
+              selected = {location.pathname === "/"}
+            >
               <HomeRoundedIcon />
               <ListItemContent>
-                <Typography level="title-sm">Home</Typography>
+                <Typography level="title-sm">市场</Typography>
               </ListItemContent>
             </ListItemButton>
           </ListItem>
 
           <ListItem>
-            <ListItemButton>
+            <ListItemButton
+              component="a"
+              href="/strategies"
+              selected = {location.pathname === "/strategies"}
+            >
               <DashboardRoundedIcon />
               <ListItemContent>
-                <Typography level="title-sm">Dashboard</Typography>
+                <Typography level="title-sm">策略</Typography>
               </ListItemContent>
             </ListItemButton>
           </ListItem>
         </List>
+
         <List
           size="sm"
           sx={{
@@ -179,13 +190,13 @@ export default function Sidebar() {
           <ListItem>
             <ListItemButton>
               <SupportRoundedIcon />
-              Support
+              支持
             </ListItemButton>
           </ListItem>
           <ListItem>
             <ListItemButton>
               <SettingsRoundedIcon />
-              Settings
+              设置
             </ListItemButton>
           </ListItem>
         </List>

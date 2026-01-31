@@ -2,18 +2,15 @@ import { CssVarsProvider } from "@mui/joy/styles";
 import { CssBaseline } from "@mui/joy";
 import { Outlet } from "react-router-dom"
 import Box from '@mui/joy/Box';
-import "./scoped.scss"
-
-import Sidebar from "./sidebar";
-import StyledLayout from "./styles";
 
 
-const MainLayout: React.FC = () => {
+
+
+const MinLayout: React.FC = () => {
   return (
     <CssVarsProvider disableTransitionOnChange>
       <CssBaseline />
-        <StyledLayout>
-          <Sidebar />
+ 
           <Box
             component="main"
             className="MainContent"
@@ -35,9 +32,9 @@ const MainLayout: React.FC = () => {
           >
             <Outlet />
           </Box>
-        </StyledLayout>
+
     </CssVarsProvider>
   )
 }
 
-export default MainLayout;
+export default MinLayout;
