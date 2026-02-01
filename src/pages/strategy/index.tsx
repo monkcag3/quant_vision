@@ -126,7 +126,7 @@ export default function OrderTable() {
 
   React.useEffect(() => {
 
-    fetch('http://127.0.0.1:5678/stocks')
+    fetch('http://127.0.0.1:5678/strategies')
         .then(res => res.json())
         .then(dataList => {
             setSymbolList(dataList);
@@ -214,26 +214,6 @@ export default function OrderTable() {
         >
           <thead>
             <tr>
-              {/* <th style={{ width: 48, textAlign: 'center', padding: '12px 6px' }}>
-                <Checkbox
-                  size="sm"
-                  indeterminate={
-                    selected.length > 0 && selected.length !== symbolList.length
-                  }
-                  checked={selected.length === symbolList.length}
-                  onChange={(event) => {
-                    setSelected(
-                      event.target.checked ? symbolList.map((row) => row.symbol) : [],
-                    );
-                  }}
-                  color={
-                    selected.length > 0 || selected.length === symbolList.length
-                      ? 'primary'
-                      : undefined
-                  }
-                  sx={{ verticalAlign: 'text-bottom' }}
-                />
-              </th> */}
               <th style={{ width: 120, padding: '12px 6px' }}>
                 <Link
                   underline="none"
@@ -258,28 +238,28 @@ export default function OrderTable() {
                   名称
                 </Link>
               </th>
-              <th style={{ width: 140, padding: '12px 6px' }}>参数</th>
+              <th style={{ width: 140, padding: '12px 6px' }}>说明</th>
               {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
               {/* <th style={{ width: 140, padding: '12px 6px' }}> </th> */}
             </tr>
           </thead>
           <tbody>
             {[...symbolList].sort(getComparator(order, 'symbol')).map((row) => (
-              <tr key={row.symbol}>
+              <tr key={row.name}>
                 <td>
                   <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                     <Link 
                          level="body-xs"
-                         component="a"
-                         href={`/symbol/${row.symbol}`}
-                         target="_blank"
-                         rel="noopener noreferrer">
-                      {row.symbol}
+                         component="button"
+                         onClick={() => {
+                          console.log("click");
+                         }}>
+                      {row.name}
                     </Link>
                   </Box>
                 </td>
                 <td>
-                  <Typography level="body-xs">{row.name}</Typography>
+                  <Typography level="body-xs">{row.desc}</Typography>
                 </td>
               </tr>
             ))}

@@ -61,7 +61,7 @@ export default () => {
     });
 
     chart?.setSymbol({ ticker: 'TestSymbol' })
-    chart?.setPeriod({ span: 1, type: 'day' })
+    chart?.setPeriod({ span: 5, type: 'minute' })
     chart?.setDataLoader({
       getBars: ({ type, timestamp, symbol, period, callback }) => {
 
